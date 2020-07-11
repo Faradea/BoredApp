@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">BoredApp</string>
-    <string name="title_home">Home</string>
-    <string name="title_done_list">Done list</string>
+    <string name="title_home">Your challenge</string>
+    <string name="title_done_list">Completed</string>
 </resources>

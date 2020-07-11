@@ -8,6 +8,12 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 
+
+// ToDo
+// 1. Accept challenge - save it to DB
+// 2. Save current challenge and use it on app opening
+// 3. Make "empty state" for completed challenges list
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
