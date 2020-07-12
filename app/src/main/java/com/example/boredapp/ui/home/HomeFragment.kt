@@ -33,6 +33,10 @@ class HomeFragment : Fragment() {
             homeViewModel.getRandomActivity()
         }
 
+        acceptButton.setOnClickListener {
+            homeViewModel.setCurrentActivityAsFinished()
+        }
+
         homeViewModel.randomActivity.observe(viewLifecycleOwner, Observer {
             text_home.text = it.activity
         })

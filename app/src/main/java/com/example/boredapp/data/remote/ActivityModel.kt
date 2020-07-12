@@ -1,5 +1,7 @@
 package com.example.boredapp.data.remote
 
+import com.example.boredapp.ui.model.Activity
+
 
 //{
 //    "activity": "Take a spontaneous road trip with some friends",
@@ -19,3 +21,14 @@ data class ActivityModel(
     val key: String,
     val accessibility: Double
 )
+
+fun ActivityModel.toDomain() =
+    Activity(
+        activity = activity,
+        type = type,
+        participants = participants,
+        price = price,
+        link = link,
+        key = key,
+        accessibility = accessibility
+    )

@@ -10,9 +10,10 @@ import androidx.navigation.ui.setupWithNavController
 
 
 // ToDo
-// 1. Accept challenge - save it to DB
-// 2. Save current challenge and use it on app opening
+// 1. Say something when activity is finished
+// 2. Display list of finished activities
 // 3. Make "empty state" for completed challenges list
+// 4. Figure out how to use coroutines in usecase (without viewmodel scope)
 
 class MainActivity : AppCompatActivity() {
 

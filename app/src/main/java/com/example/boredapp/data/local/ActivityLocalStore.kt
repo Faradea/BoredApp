@@ -2,19 +2,19 @@ package com.example.boredapp.data.local
 
 import com.example.boredapp.MainApplication
 
-class ActivityLocalStore() {
+class ActivityLocalStore {
 
     private val activityDAO = MainApplication.db.activityDAO()
 
-    fun getCurrentActivity(): List<ActivityEntity> {
-        return activityDAO.getFirstNotFinished()
+    suspend fun getCurrentActivity(): ActivityEntity? {
+        return activityDAO.getLastNotFinished()
     }
 
-    fun getAllFinishedActivities(): List<ActivityEntity> {
+    suspend fun getAllFinishedActivities(): List<ActivityEntity> {
         return activityDAO.getAllFinished()
     }
 
-    fun saveActivity(activityEntity: ActivityEntity) {
+    suspend fun saveActivity(activityEntity: ActivityEntity) {
         activityDAO.insert(activityEntity)
     }
 }

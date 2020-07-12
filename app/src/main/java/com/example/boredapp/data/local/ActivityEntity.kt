@@ -3,6 +3,7 @@ package com.example.boredapp.data.local
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.boredapp.ui.model.Activity
 
 @Entity
 class ActivityEntity {
@@ -34,5 +35,16 @@ class ActivityEntity {
     var isFinished: Boolean = false
 
     @ColumnInfo(name = "finishedAt")
-    var finishedAt: Int = 0
+    var finishedAt: Long = 0
 }
+
+fun ActivityEntity.toDomain() =
+    Activity(
+        activity = title,
+        type = type,
+        participants = participants,
+        price = price,
+        link = link,
+        key = key,
+        accessibility = accessibility
+    )

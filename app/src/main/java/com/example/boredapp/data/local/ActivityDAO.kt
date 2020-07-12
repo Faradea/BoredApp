@@ -8,12 +8,12 @@ import androidx.room.Query
 @Dao
 interface ActivityDAO {
 
-    @Query("SELECT * FROM activityentity WHERE isFinished = 1 ORDER BY finishedAt DESC")
-    fun getAllFinished(): List<ActivityEntity>
+    @Query("SELECT * FROM activityentity WHERE isFinished = 1 ORDER BY uid DESC")
+    suspend fun getAllFinished(): List<ActivityEntity>
 
-    @Query("SELECT * FROM activityentity WHERE isFinished = 0 ORDER BY finishedAt DESC LIMIT 1")
-    fun getFirstNotFinished(): List<ActivityEntity>
+    @Query("SELECT * FROM activityentity WHERE isFinished = 0 ORDER BY uid DESC LIMIT 1")
+    suspend fun getLastNotFinished(): ActivityEntity?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(activity: ActivityEntity)
+    suspend fun insert(activity: ActivityEntity)
 }
