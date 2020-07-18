@@ -19,7 +19,8 @@ data class ActivityModel(
     val price: Double,
     val link: String?,
     val key: String,
-    val accessibility: Double
+    val accessibility: Double,
+    val finishedAt: Long?
 )
 
 fun ActivityModel.toDomain() =
@@ -30,5 +31,6 @@ fun ActivityModel.toDomain() =
         price = price,
         link = link,
         key = key,
-        accessibility = accessibility
+        accessibility = accessibility,
+        finishedAt = null
     )

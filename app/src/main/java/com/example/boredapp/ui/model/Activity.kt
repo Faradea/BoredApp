@@ -9,7 +9,8 @@ data class Activity(
     val price: Double,
     val link: String?,
     val key: String,
-    val accessibility: Double
+    val accessibility: Double,
+    val finishedAt: Long?
 )
 
 fun Activity.toEntity(isFinished: Boolean): ActivityEntity {

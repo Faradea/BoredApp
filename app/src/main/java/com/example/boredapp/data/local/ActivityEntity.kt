@@ -46,5 +46,6 @@ fun ActivityEntity.toDomain() =
         price = price,
         link = link,
         key = key,
-        accessibility = accessibility
+        accessibility = accessibility,
+        finishedAt = finishedAt
     )

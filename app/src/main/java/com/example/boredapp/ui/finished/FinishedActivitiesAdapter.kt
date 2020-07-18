@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.boredapp.R
 import com.example.boredapp.ui.model.Activity
 import kotlinx.android.synthetic.main.item_finished_activity.view.*
+import java.text.DateFormat
+import java.util.*
 
 class FinishedActivitiesAdapter : RecyclerView.Adapter<FinishedActivitiesAdapter.ViewHolder>() {
 
@@ -30,6 +32,9 @@ class FinishedActivitiesAdapter : RecyclerView.Adapter<FinishedActivitiesAdapter
         val item = mItems[position]
 
         holder.title.text = item.activity
+        item.finishedAt?.let {
+            holder.finishedAt.text = android.text.format.DateFormat.format("dd-MM-yyyy HH:mm", Date(it))
+        }
 
         holder.setItem(item)
     }
@@ -38,6 +43,7 @@ class FinishedActivitiesAdapter : RecyclerView.Adapter<FinishedActivitiesAdapter
         private var mItem: Activity? = null
 
         val title: TextView = view.activityTitle
+        val finishedAt: TextView = view.activityFinishedAt
 
         fun setItem(item:Activity) {
             mItem = item
