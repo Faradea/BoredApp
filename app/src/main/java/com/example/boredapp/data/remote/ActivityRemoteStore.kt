@@ -1,14 +1,17 @@
 package com.example.boredapp.data.remote
 
-import com.example.boredapp.data.base.BaseRemoteStore
+import okhttp3.ResponseBody
+import retrofit2.Response
+import java.lang.Exception
 
-class ActivityRemoteStore(private val api : BoredAPI) : BaseRemoteStore() {
+class ActivityRemoteStore(private val api : BoredAPI) {
 
-    suspend fun getRandomActivity(): ActivityModel? {
-        return safeApiCall(
-            call = { api.getRandomActivity().await() },
-            errorMessage = "Error getting random activity"
-        )
+    suspend fun getRandomActivity(): Response<ActivityModel> {
+        return try {
+            api.getRandomActivityAsync().await()
+        } catch (e: Exception) {
+            Response.error(999, ResponseBody.create(null, ""))
+        }
     }
 
 }

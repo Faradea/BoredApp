@@ -4,6 +4,8 @@ import android.util.Log
 import retrofit2.Response
 import java.io.IOException
 
+// ToDo This one looks better - https://github.com/JakeWharton/retrofit2-kotlin-coroutines-adapter/issues/3
+
 open class BaseRemoteStore{
 
     suspend fun <T : Any> safeApiCall(call: suspend () -> Response<T>, errorMessage: String): T? {

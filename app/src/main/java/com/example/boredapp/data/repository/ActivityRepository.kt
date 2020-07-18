@@ -16,8 +16,14 @@ class ActivityRepository {
     suspend fun getCurrentActivity(): Activity? =
         localStore.getCurrentActivity()?.toDomain()
 
-    suspend fun getRandomActivity(): Activity? =
-        remoteStore.getRandomActivity()?.toDomain()
+    suspend fun getRandomActivity(): Activity? {
+        val result = remoteStore.getRandomActivity()
+        return if (result.isSuccessful) {
+            result.body()?.toDomain()
+        } else {
+            null
+        }
+    }
 
     suspend fun saveCurrentActivity(activity: Activity) =
         localStore.saveActivity(activity.toEntity(isFinished = false))

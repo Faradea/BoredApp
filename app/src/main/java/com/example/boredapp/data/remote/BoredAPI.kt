@@ -11,7 +11,7 @@ const val BORED_API_URL:String = "https://www.boredapi.com/api/"
 
 interface BoredAPI {
     @GET("activity")
-    fun getRandomActivity(): Deferred<Response<ActivityModel>>
+    fun getRandomActivityAsync(): Deferred<Response<ActivityModel>>
 
     companion object ApiFactory{
         fun create():BoredAPI {
