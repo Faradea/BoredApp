@@ -1,15 +1,18 @@
 package com.example.boredapp.ui.home
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.boredapp.R
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.coroutines.NonCancellable.cancel
+
 
 class HomeFragment : Fragment() {
 
@@ -34,7 +37,20 @@ class HomeFragment : Fragment() {
         }
 
         acceptButton.setOnClickListener {
-            homeViewModel.setCurrentActivityAsFinished()
+            val builder: AlertDialog.Builder = AlertDialog.Builder(this.requireContext())
+            builder.setMessage(R.string.confirm_activity_completed_message)
+                .setTitle(R.string.confirm_activity_completed_title)
+
+            builder.setPositiveButton(R.string.ok) { _, _ ->
+                homeViewModel.setCurrentActivityAsFinished()
+            }
+
+            builder.setNegativeButton(R.string.cancel) { dialog, _ ->
+                dialog.dismiss()
+            }
+
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
 
         homeViewModel.randomActivity.observe(viewLifecycleOwner, Observer {

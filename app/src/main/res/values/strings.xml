@@ -2,4 +2,8 @@
     <string name="app_name">BoredApp</string>
     <string name="title_home">Your challenge</string>
     <string name="title_done_list">Completed</string>
+    <string name="confirm_activity_completed_message">Have you complete it?</string>
+    <string name="confirm_activity_completed_title">Are you sure?</string>
+    <string name="ok">Yes!</string>
+    <string name="cancel">Not yet</string>
 </resources>
