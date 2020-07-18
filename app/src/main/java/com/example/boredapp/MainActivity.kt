@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 
 
 // ToDo
-// 2. Display list of finished activities
+// 2. List of finished activities - add dates and improve UI
 // 3. Make "empty state" for completed challenges list
 // 4. Figure out how to use coroutines in usecase (without viewmodel scope)
 

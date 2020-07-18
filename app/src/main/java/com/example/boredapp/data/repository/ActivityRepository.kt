@@ -30,4 +30,7 @@ class ActivityRepository {
 
     suspend fun finishCurrentActivity(activity: Activity) =
         localStore.saveActivity(activity.toEntity(isFinished = true))
+
+    suspend fun getAllFinished() =
+        localStore.getAllFinishedActivities().map { it.toDomain() }
 }

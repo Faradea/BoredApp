@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_done_list"
-        android:name="com.example.boredapp.ui.dashboard.DashboardFragment"
+        android:name="com.example.boredapp.ui.finished.FinishedActivitiesFragment"
         android:label="@string/title_done_list"
         tools:layout="@layout/fragment_done_list" />
 
