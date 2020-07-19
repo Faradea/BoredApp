@@ -10,7 +10,8 @@ import androidx.navigation.ui.setupWithNavController
 
 
 // ToDo
-// 3. Make "empty state" for completed challenges list
+// 2. Buttons icons - add click effects
+// 3. App icon
 // 4. Figure out how to use coroutines in usecase (without viewmodel scope)
 
 class MainActivity : AppCompatActivity() {

@@ -6,4 +6,5 @@
     <string name="confirm_activity_completed_title">Are you sure?</string>
     <string name="ok">Yes!</string>
     <string name="cancel">Not yet</string>
+    <string name="completed_empty">Your completed tasks will be here</string>
 </resources>

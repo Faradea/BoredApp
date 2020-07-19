@@ -36,6 +36,12 @@ class FinishedActivitiesFragment : Fragment() {
         finishedActivitiesRv.layoutManager = LinearLayoutManager(this.requireContext(), RecyclerView.VERTICAL, false)
 
         viewModel.finishedActivities.observe(viewLifecycleOwner, Observer {
+            if (it.isEmpty()) {
+                emptyLayout.visibility = View.VISIBLE
+            } else {
+                emptyLayout.visibility = View.GONE
+            }
+
             finishedActivitiesAdapter.setActivities(it)
         })
 
