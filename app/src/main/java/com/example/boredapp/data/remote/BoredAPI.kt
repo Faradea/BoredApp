@@ -1,7 +1,6 @@
 package com.example.boredapp.data.remote
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -11,7 +10,7 @@ const val BORED_API_URL:String = "https://www.boredapi.com/api/"
 
 interface BoredAPI {
     @GET("activity")
-    fun getRandomActivityAsync(): Deferred<Response<ActivityModel>>
+    suspend fun getRandomActivityAsync(): Response<ActivityModel>
 
     companion object ApiFactory{
         fun create():BoredAPI {

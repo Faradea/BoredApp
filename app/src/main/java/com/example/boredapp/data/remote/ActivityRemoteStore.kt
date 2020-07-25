@@ -8,7 +8,7 @@ class ActivityRemoteStore(private val api : BoredAPI) {
 
     suspend fun getRandomActivity(): Response<ActivityModel> {
         return try {
-            api.getRandomActivityAsync().await()
+            api.getRandomActivityAsync()
         } catch (e: Exception) {
             Response.error(999, ResponseBody.create(null, ""))
         }
